@@ -1,6 +1,6 @@
 /**********************************************************
 * Бирюков Марк Валерьевич, ПИ-231
-* Share-Link: https://onlinegdb.com/4D675Op05
+* Share-Link: https://onlinegdb.com/F5GtUILyF
 * Тема: Программирование линейных алгоритмов, вариант 2
 ***********************************************************/
 
@@ -11,12 +11,15 @@ using namespace std;
 
 int main() {
     // init const
-    const double PI = 3.14159
+    const double PI = 3.14159;
     
     // init variables
     double a, b, c, p, g, division, alpha_low, alpha, x1, x2, x3, y1, y2, y3;
+    cout << "Введите a, будьте добры: ";
     cin >> a;
-    cin >> b:
+    cout << "Введите b, умоляю: ";
+    cin >> b;
+    cout << "Введите c, прошу: ";
     cin >> c;
     p = b / a;
     g = c / a;
