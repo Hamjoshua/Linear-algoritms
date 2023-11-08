@@ -9,7 +9,11 @@ void printStatsString(map<string, int> dict, string header) {
     string line;
     cout << "\n\n" << header << "\n";
     for (const auto& element : dict) {
-        cout << element.first << ": " << element.second << "\n";
+        int counter = (int)element.second;
+        if (counter > 1) {
+            counter -= 1;
+            cout << element.first << ": " << counter << "\n";
+        }
     }
 }
 
