@@ -1,0 +1,81 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <sstream>
+using namespace std;
+
+vector<string> splitBySpacebar(string line){
+    vector<string> result;
+    istringstream iss (line);
+    string item;
+    
+    while(iss >> item){
+        result.push_back(item);
+    };
+    
+    return result;
+}
+
+vector<vector<string>> getArraysVector(int nArrays){
+    vector<vector<string>> arraysVector;
+    
+    for(int ind = 0; ind < nArrays; ++ind){
+        int lenOfArray;
+        vector<string> stringArray;
+        
+        cin >> lenOfArray;
+        
+        for(int dind = 0; dind < lenOfArray; ++dind){
+            string element;
+            cin >> element;
+            stringArray.push_back(element);
+        }
+        
+        arraysVector.push_back(stringArray);
+    }
+     return arraysVector;
+}
+
+vector<vector<int>> getQuerriesVector(int nQuerries){
+    vector<vector<int>> querriesVector;
+    
+    for(int ind = 0; ind < nQuerries; ++ind){
+        vector<int> numsVector;
+        
+        int row, column;
+        
+        scanf("%d %d", &row, &column);
+        cout << "row is " << row << "col is " << column << "\n";
+        numsVector.push_back(row);
+        numsVector.push_back(column);
+        
+        querriesVector.push_back(numsVector);
+    }
+    
+    return querriesVector;
+}
+
+int main() {
+    int nArrays, nQuerries;
+    vector<vector<string>> arraysVector;
+    vector<vector<int>> querriesVector;
+    
+    scanf("%d %d", &nArrays, &nQuerries);
+    
+    arraysVector = getArraysVector(nArrays);
+    cout << "len of arr is " << arraysVector.size() << "\n";
+    querriesVector = getQuerriesVector(nQuerries);
+    cout << "len of qarr is " << querriesVector.size() << "\n";
+    
+    for(int ind = 0; ind < nQuerries; ++ind){
+        int row = querriesVector[ind][0];
+        int column = querriesVector[ind][1];
+        cout << "row is " << row << "col is " << column << "\n"; 
+        string element = arraysVector[row][column];
+        cout << element << "\n";
+    }
+    
+    return 0;
+}
